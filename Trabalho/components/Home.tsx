@@ -1,6 +1,7 @@
 import React from 'react';
-import {Text, View, StyleSheet, TouchableOpacity} from 'react-native';
+import {Text, View, StyleSheet, TouchableOpacity, Image} from 'react-native';
 import Sobre from './Sobre';
+import Imagem from "../assets/img1.png";
 
 export default function App() {
     const [page, setPage] = React.useState('home');
@@ -9,9 +10,11 @@ export default function App() {
         if(page === 'home') {
             return(
                 <View style={styles.container}>
-                    <Text style={styles.title1}>NavTrack</Text>
-                    <Text style={styles.title}>Navegue com confiança e rastreie sua</Text>
-                    <Text style={styles.title}>localização em tempo real!</Text>
+                    <Text style={styles.title1}>TOCLOG</Text>
+                    <Text style={styles.title}>
+                        <Image source={Imagem} />
+                    </Text>
+                    <Text style={styles.title2}>SE LOCALIZE :</Text>
                     <TouchableOpacity style={styles.button} onPress={() => setPage('sobre')}>
                     <Text style={styles.buttonText}>Clique Aqui</Text>
                     </TouchableOpacity>
@@ -33,9 +36,17 @@ const styles = StyleSheet.create({
       backgroundColor: '#fff',
     },
     title1: {
-        fontSize: 32,
+        fontSize: 80,
         fontWeight: 'bold',
-        color: '#000',
+        fontFamily: 'karantina',
+        color: '#3163E3',
+        marginBottom: 20,
+    },
+    title2: {
+        fontSize: 50,
+        fontWeight: 'bold',
+        fontFamily: 'karantina',
+        color: '#3163E3',
         marginBottom: 20,
     },
     title: {
